@@ -52,7 +52,7 @@ export class App {
     const startSimulation = () => {
       this.isProcessing = true
       button.style.display = 'none'
-      loader.style.display = 'initial'
+      loader.style.display = 'block'
     }
 
     const finishSimulation = () => {
