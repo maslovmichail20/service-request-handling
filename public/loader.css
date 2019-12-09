@@ -1,0 +1,178 @@
+.chart-loader {
+  height: 110px;
+  width: 160px;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+@keyframes loading {
+  0% {
+    background-color: #cd0a00;
+  }
+  30% {
+    background-color: #fa8a00;
+  }
+  50% {
+    height: 100px;
+    margin-top: 0px;
+  }
+  80% {
+    background-color: #91d700;
+  }
+  100% {
+    background-color: #cd0a00;
+  }
+}
+
+.chart-loader .loading-1 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+.chart-loader .loading-2 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.chart-loader .loading-3 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+.chart-loader .loading-4 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.chart-loader .loading-5 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 1.25s;
+  animation-delay: 1.25s;
+}
+.chart-loader .loading-6 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+.chart-loader .loading-7 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 1.75s;
+  animation-delay: 1.75s;
+}
+.chart-loader .loading-8 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.chart-loader .loading-9 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 2.25s;
+  animation-delay: 2.25s;
+}
+.chart-loader .loading-10 {
+  height: 10px;
+  width: 30px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}

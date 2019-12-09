@@ -1,4 +1,4 @@
-import { ChartConfiguration } from 'chart.js'
+import {ChartConfiguration} from 'chart.js'
 
 export const createTimeWaitIntensityRelationChartConfig = (intensities: number[]): ChartConfiguration => ({
   type: 'line',
@@ -6,8 +6,8 @@ export const createTimeWaitIntensityRelationChartConfig = (intensities: number[]
     labels: intensities.map(String),
     datasets: [{
       label: 'Dataset',
-      backgroundColor: 'blue',
-      borderColor: 'blue',
+      backgroundColor: 'orange',
+      borderColor: 'orange',
       data: [],
       fill: false,
     }]
@@ -16,7 +16,7 @@ export const createTimeWaitIntensityRelationChartConfig = (intensities: number[]
     responsive: true,
     title: {
       display: true,
-      text: 'Relation between average time wait and intensity of requests to processor'
+      text: 'Relation between average time wait of request and intensity of requests to processor'
     },
     scales: {
       yAxes: [{

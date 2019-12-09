@@ -1,4 +1,4 @@
-import { ChartConfiguration } from 'chart.js'
+import {ChartConfiguration} from 'chart.js'
 
 export const createTimeWaitPriorityRelationChartConfig = (maxPriority: number): ChartConfiguration => ({
   type: 'line',
@@ -16,7 +16,7 @@ export const createTimeWaitPriorityRelationChartConfig = (maxPriority: number): 
     responsive: true,
     title: {
       display: true,
-      text: 'Relation between average time wait and priority of request to processor'
+      text: 'Relation between average time wait of request and priority of request to processor'
     },
     scales: {
       yAxes: [{

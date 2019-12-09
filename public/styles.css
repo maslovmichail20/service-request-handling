@@ -1,0 +1,71 @@
+html {
+  height: 100%;
+}
+
+.app {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.app-section {
+  width: 50%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.app-section-header {
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+}
+
+.chart-loader {
+  display: none;
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls-container > div {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.controls-container > div:last-child {
+  height: 110px;
+}
+
+.number-control {
+  font-size: 18px;
+  padding: 12px;
+}
+
+.number-control > input {
+  margin-left: 6px;
+  height: 18px;
+  font-size: 14px;
+}
+
+.radion-control-caption {
+  font-size: 18px;
+}
+
+.radio-control-container > label {
+  display: inline-block;
+  margin: 12px;
+}
+
+.start-button {
+  padding: 6px;
+  font-size: 18px;
+  margin: 12px;
+}

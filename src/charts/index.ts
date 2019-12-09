@@ -1,10 +1,10 @@
-import Chart, { ChartConfiguration } from 'chart.js'
+import Chart, {ChartConfiguration} from 'chart.js'
 
 type ChartType = 'timeWaitIntensityRelation' | 'processorIdleTimeIntensityRelation' | 'timeWaitPriorityRelation'
 
 export type ChartsControllerConfig = Record<ChartType, {
   config: ChartConfiguration
-  getData: () => Array<{ x: number, y: number }>
+  getData: () => Array<{x: number, y: number}>
 }>
 
 export class ChartsController {
@@ -18,7 +18,7 @@ export class ChartsController {
 
     this.ready = new Promise(resolve => {
       window.onload = () => {
-        Object.entries(this.config).forEach(([type, { config }]) => {
+        Object.entries(this.config).forEach(([type, {config}]) => {
           const ctx = (document.getElementById(type) as HTMLCanvasElement).getContext('2d')!
           this.charts[type as ChartType] = new Chart(ctx, config)
         })
@@ -28,9 +28,30 @@ export class ChartsController {
   }
 
   public updateCharts = () => {
-    Object.values(this.config).forEach(({ config, getData }) => {
+    Object.values(this.config).forEach(({config, getData}) => {
       config.data!.datasets![0].data = getData()
     })
+    this.commitUpdate()
+  }
+
+  public updateChartLables = (intensities: number[], maxPriority: number) => {
+    const intensityLables = intensities.map(String)
+    const priorityLables = new Array(maxPriority).fill(null).map((_, i) => String(i + 1))
+
+    this.charts.timeWaitIntensityRelation.data!.labels = intensityLables
+    this.charts.processorIdleTimeIntensityRelation.data!.labels = intensityLables
+    this.charts.timeWaitPriorityRelation.data!.labels = priorityLables
+
+    this.commitUpdate()
+  }
+
+  public updateDataGetters = (getters: Record<ChartType, () => Array<{x: number, y: number}>>) => {
+    Object.entries(getters).forEach(([type, getData]) => {
+      this.config[type as ChartType].getData = getData
+    })
+  }
+
+  private commitUpdate = () => {
     Object.values(this.charts).forEach(chart => chart.update())
   }
 }

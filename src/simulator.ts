@@ -1,8 +1,8 @@
 import uuid from 'uuid'
 
-import { Processor } from './processor'
-import { Process, Reporters } from './types'
-import { getRandom } from './utils'
+import {Processor} from './processor'
+import {Process, Reporters} from './types'
+import {getRandom} from './utils'
 
 export type ProcessStatistic = {
   processId: string
@@ -49,16 +49,16 @@ export class Simulator {
 
     this.config.intensities.forEach(intensity => {
       const processorId = uuid()
-      this.statistic.set(processorId, { intensity, lifecicle: [], processHandling: [] })
+      this.statistic.set(processorId, {intensity, lifecicle: [], processHandling: []})
 
-      const processor = new Processor({ maxPriority: config.maxProcessPriority }, {
+      const processor = new Processor({maxPriority: config.maxProcessPriority}, {
         reportProcessCapture: this.createReportProcessCapture(processorId),
         reportProcessExecution: this.createReportProcessExecution(processorId),
         reportIdleStart: this.createReportIdleStart(processorId),
         reportIdleEnd: this.createReportIdleEnd(processorId)
       })
 
-      this.processors[processorId] = { intensity, processor, capturedProccessCount: 0 }
+      this.processors[processorId] = {intensity, processor, capturedProccessCount: 0}
     })
   }
 
@@ -68,8 +68,8 @@ export class Simulator {
 
   public getStatistic = () =>
     Array.from(this.statistic.values()).map(
-      ({ processHandling, ...rest }) => ({
-        processHandling: processHandling.map(({ processId, ...times }) => ({
+      ({processHandling, ...rest}) => ({
+        processHandling: processHandling.map(({processId, ...times}) => ({
           duration: this.processMap[processId].duration,
           priority: this.processMap[processId].priority,
           ...times
@@ -77,7 +77,6 @@ export class Simulator {
         ...rest
       })
     )
-
 
   private simulateExecution = (systemProccessor: SimulationProccessor) =>
     new Promise(resolve => {
@@ -87,7 +86,7 @@ export class Simulator {
           systemProccessor.processor.bindExecutionEnd(resolve)
         }
 
-        let processList = this.generateProcess(systemProccessor.intensity * 10)
+        let processList = this.generateProcess(systemProccessor.intensity * 20)
         if (systemProccessor.capturedProccessCount + processList.length > this.config.process.count) {
           processList = processList.slice(0, this.config.process.count - systemProccessor.capturedProccessCount)
         }
@@ -109,13 +108,13 @@ export class Simulator {
 
   private createReportProcessCapture = (processorId: string): Reporters['reportProcessCapture'] =>
     (processId, captureTime) => {
-      this.statistic.get(processorId)?.processHandling.push({ processId, captureTime })
+      this.statistic.get(processorId)?.processHandling.push({processId, captureTime})
     }
 
   private createReportProcessExecution = (processorId: string): Reporters['reportProcessExecution'] =>
     (processId, executionTime) => {
       const statistic = this.statistic.get(processorId)?.processHandling
-        .find(({ processId: id }) => id === processId)
+        .find(({processId: id}) => id === processId)
 
       if (statistic) {
         statistic.executionTime = executionTime
@@ -126,7 +125,7 @@ export class Simulator {
 
   private createReportIdleStart = (processorId: string): Reporters['reportIdleStart'] =>
     idleStartTime => {
-      this.statistic.get(processorId)?.lifecicle.push({ idleStartTime })
+      this.statistic.get(processorId)?.lifecicle.push({idleStartTime})
     }
 
   private createReportIdleEnd = (processorId: string): Reporters['reportIdleEnd'] =>
